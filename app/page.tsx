@@ -1,9 +1,12 @@
 
+import FeaturedBlogPost from "@/components/blog/FeaturedBlogPost";
 import ThreeColumnBlog from "@/components/blog/ThreeColumnBlog";
+import Footer from "@/components/global/Footer";
 import Events from "@/components/landing/Events";
 import Features from "@/components/landing/Features";
 import HeroSection from "@/components/landing/HeroSection";
 import Navbar from "@/components/landing/Navbar";
+import Partners from "@/components/landing/Partners";
 
 
 export default function Home() {
@@ -13,7 +16,10 @@ export default function Home() {
       {/* <ThreeColumnBlog /> */}
       <HeroSection />
       <Features />
+      <Partners />
       <Events />
+      <FeaturedBlogPost />
+      <Footer />
     </section>
   );
 }

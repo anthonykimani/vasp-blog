@@ -1,12 +1,12 @@
 import { client, urlFor } from "@/app/lib/sanity";
 import { featureSource } from "@/helpers/featureSource";
 import { statSource } from "@/helpers/statSource";
-import { BlogArticle } from "@/types/interface";
+import { Event } from "@/types/interface";
 import Image from "next/image";
 import React from "react";
 
 async function getData() {
-  const query = `*[_type == 'blog'] | order(_createdAt desc){
+  const query = `*[_type == 'event'] | order(_createdAt desc){
     title,
       description,
       "currentSlug": slug.current,
@@ -16,9 +16,8 @@ async function getData() {
       "updatedAt": _updatedAt,
       category,
       "categoryTitle":category.title,
-      "authorName":author.name,
-      "authorRole":author.role,
-      "authorImageUrl": author.imageUrl.asset._ref,
+      location,
+      content,
   }`;
 
   const data = await client.fetch(query);
@@ -31,7 +30,7 @@ const Events = async () => {
   return (
     <section className="bg-aqua text-black font-jakarta  p-5 md:py-10 md:px-20">
       <article className="flex flex-col items-center xsm:flex-row py-5">
-        <h2 className="text-red-600 text-center font-bold text-3xl md:text-4xl lg:text-5xl">
+        <h2 className="text-red-500 text-center font-bold text-3xl md:text-4xl lg:text-5xl">
           Upcoming Events
         </h2>
         <h3 className="text-lg text-white text-center my-[30px]">
@@ -40,20 +39,21 @@ const Events = async () => {
         </h3>
       </article>
       <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 ">
-        {data.map((post: BlogArticle) => (
+        {data.map((post: Event) => (
           <article
             key={post.id}
             className="flex flex-col items-start justify-between bg-[#a5a5a518] rounded-2xl overflow-hidden"
           >
             <div className="relative w-full h-[300px] overflow-hidden object-contain">
-              <Image
-                src={urlFor(post.imageUrl).url()}
-                alt=""
-                width={0}
-                height={0}
-                className="w-full h-full object-cover"
-              />
-              
+              {post.imageUrl && (
+                <Image
+                  src={urlFor(post.imageUrl).url()}
+                  alt=""
+                  width={0}
+                  height={0}
+                  className="w-full h-full object-cover"
+                />
+              )}
             </div>
             <div className="max-w-xl p-5">
               <div className="mt-8 flex items-center text-xs">
@@ -74,24 +74,6 @@ const Events = async () => {
                 <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
                   {post.description}
                 </p>
-              </div>
-              <div className="relative mt-8 flex items-center gap-x-4">
-                <Image
-                  src={urlFor(post.authorImageUrl).url()}
-                  alt=""
-                  width={100}
-                  height={100}
-                  className="h-10 object-cover w-10 rounded-full bg-gray-100"
-                />
-                <div className="text-sm leading-6">
-                  <p className="font-semibold text-gray-900">
-                    <a>
-                      <span className="absolute inset-0" />
-                      {post.authorName}
-                    </a>
-                  </p>
-                  <p className="text-gray-600">{post.authorRole}</p>
-                </div>
               </div>
             </div>
           </article>
