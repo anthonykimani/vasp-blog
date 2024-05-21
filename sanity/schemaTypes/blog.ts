@@ -37,6 +37,11 @@ export default {
       title: 'Date',
     },
     {
+      name: 'link',
+      type: 'url',
+      title: 'Blog Link',
+    },
+    {
       name: 'category',
       type: 'object',
       title: 'Category',

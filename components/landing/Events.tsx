@@ -3,6 +3,7 @@ import { featureSource } from "@/helpers/featureSource";
 import { statSource } from "@/helpers/statSource";
 import { Event } from "@/types/interface";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 async function getData() {
@@ -15,6 +16,7 @@ async function getData() {
       "dateTime": _createdAt,
       "updatedAt": _updatedAt,
       category,
+      link,
       "categoryTitle":category.title,
       location,
       content,
@@ -40,7 +42,8 @@ const Events = async () => {
       </article>
       <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 ">
         {data.map((post: Event) => (
-          <article
+          <Link
+            href={`/events/${post.currentSlug}`}
             key={post.id}
             className="flex flex-col items-start justify-between bg-[#a5a5a518] rounded-2xl overflow-hidden"
           >
@@ -76,7 +79,7 @@ const Events = async () => {
                 </p>
               </div>
             </div>
-          </article>
+          </Link>
         ))}
       </div>
     </section>

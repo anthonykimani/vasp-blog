@@ -30,6 +30,7 @@ async function getData() {
       "dateTime": _createdAt,
       "updatedAt": _updatedAt,
       category,
+      link,
       "categoryTitle":category.title,
       "authorName":author.name,
       "authorRole":author.role,
