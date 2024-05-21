@@ -4,7 +4,7 @@ import { List, XCircle } from "@phosphor-icons/react";
 import React, { useState } from 'react'
 import Image from 'next/image';
 
-const Navbar = () => {
+const Navbarr = () => {
 
   return (
     <div className="">
@@ -102,4 +102,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbarr

@@ -1,15 +1,6 @@
 import { client, urlFor } from "@/app/lib/sanity";
-import { CasualGuy, ICTBill } from "@/constants/img";
 import { BlogArticle } from "@/types/interface";
 import Image from "next/image";
-import {
-  Key,
-  ReactElement,
-  JSXElementConstructor,
-  ReactNode,
-  ReactPortal,
-  AwaitedReactNode,
-} from "react";
 
 async function getData() {
   const query = `*[_type == 'blog'] | order(_createdAt desc){
