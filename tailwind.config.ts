@@ -8,12 +8,21 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        DM: ["DM Sans", "sans-serif"],
+        clash: ["Clash Display", "sans-serif"],
+        clashDisplay: ['var(--font-clashDisplay)'],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "app-bg":"url('/img/b8.jpeg')",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      color: {
+        'purple':'#A33DFF'
+      }
     },
   },
   plugins: [require('@tailwindcss/forms'),require('@tailwindcss/typography')],

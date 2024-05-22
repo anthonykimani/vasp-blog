@@ -32,7 +32,7 @@ const Events = async () => {
   return (
     <section className="bg-aqua text-black font-jakarta  p-5 md:py-10 md:px-20">
       <article className="flex flex-col items-center xsm:flex-row py-5">
-        <h2 className="text-red-500 text-center font-bold text-3xl md:text-4xl lg:text-5xl">
+        <h2 className="text-[#A33DFF] text-center font-bold text-3xl md:text-4xl lg:text-5xl">
           Upcoming Events
         </h2>
         <h3 className="text-lg text-white text-center my-[30px]">
@@ -58,21 +58,21 @@ const Events = async () => {
                 />
               )}
             </div>
-            <div className="max-w-xl p-5">
+            <div className="max-w-xl p-5 flex flex-col justify-around">
               <div className="mt-8 flex items-center text-xs">
                 <time dateTime={post.date} className="text-gray-500">
                   {post.date}
                 </time>
-                <a className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                <span className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
                   {post.categoryTitle}
-                </a>
+                </span>
               </div>
               <div className="group relative">
-                <h3 className="mt-3 text-2xl font-semibold text-red-600">
-                  <a>
+                <h3 className="mt-3 text-2xl font-semibold text-[#A33DFF]">
+                  <span>
                     <span className="absolute inset-0" />
                     {post.title}
-                  </a>
+                  </span>
                 </h3>
                 <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
                   {post.description}
