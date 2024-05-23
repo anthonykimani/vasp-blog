@@ -11,7 +11,7 @@ import Navbar from "@/components/landing/Navbar";
 
 export const revalidate = 30;
 
-export const social = [
+const social = [
   {
     name: "Facebook",
     href: "#",
