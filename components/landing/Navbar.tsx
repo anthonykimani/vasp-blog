@@ -18,10 +18,10 @@ import Link from "next/link";
 
 const navigation = [
   { name: "Home", href: "/", current: true },
-  { name: "About Us", href: "#", current: false },
+  { name: "About", href: "#", current: false },
   { name: "Publications", href: "/publications", current: false },
   { name: "Events", href: "/events", current: false },
-  { name: "Contact Us", href: "#", current: false },
+  { name: "Contact", href: "#", current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -36,7 +36,7 @@ export default function Navbar() {
           <div className="mx-auto px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex flex-shrink-0 items-center">
+                <Link href="/" className="flex flex-shrink-0 items-center">
                   <Image
                     className="h-8 w-auto"
                     src={VaspLogoPlain}
@@ -44,9 +44,9 @@ export default function Navbar() {
                     width={100}
                     height={100}
                   />
-                </div>
-                <div className="hidden sm:ml-6 sm:flex justify-center w-full">
-                  <div className="flex justify-around space-x-4 w-[50%]">
+                </Link>
+                <div className="hidden lg:ml-6 sm:flex justify-center w-full">
+                  <div className="flex justify-around">
                     {navigation.map((item) => (
                       <Link
                         key={item.name}

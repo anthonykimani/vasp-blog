@@ -2,10 +2,6 @@ import { client, urlFor } from "@/app/lib/sanity";
 import Navbar from "@/components/landing/Navbar";
 import { EventInterface } from "@/types/interface";
 import { slugify } from "@/utils/helpers";
-import {
-  CheckCircleIcon,
-  InformationCircleIcon,
-} from "@heroicons/react/24/outline";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
 import React from "react";

@@ -113,11 +113,11 @@ const BlogStructure = async ({ params }: { params: { slug: string } }) => {
               width={1000}
               height={500}
               alt=""
-              className="h-[500px] w-full object-cover my-[20px] rounded-md"
+              className="h-[200px] sm:h-[500px] w-[95%] sm:w-full object-cover my-[20px] rounded-md"
             />
           </article>
-          <div className="flex flex-col-reverse md:flex-row prose prose-xl min-w-full text-white prose-invert prose-li:marker:text-primary prose-a:text-primary">
-            <div className="mx-[10px] md:mx-[0px] rounded-3xl p-5 md:p-10 bg-slate-100 bg-opacity-5">
+          <div className="flex flex-col-reverse md:flex-row prose prose-base sm:prose-xl min-w-full text-white prose-invert prose-li:marker:text-primary prose-a:text-primary">
+            <div className="mx-[10px] md:mx-[0px] rounded-3xl p-4 sm:p-5 md:p-10 bg-slate-100 bg-opacity-5">
               <PortableText
                 value={blog.content}
                 components={myPortableTextComponents}
@@ -137,7 +137,7 @@ export default BlogStructure;
 const Toc = ({ headings }: any) => {
   return (
     <div className="min-w-[30%] md:ml-5">
-      <h2 className="text-white">Table of Contents</h2>
+      <h2 className="text-white text-xl sm:text-3xl">Table of Contents</h2>
       <nav>
         <ul className="text-white">
           {headings?.map((heading: any) => {
@@ -145,7 +145,7 @@ const Toc = ({ headings }: any) => {
               <li key={`#${heading?._key}`} className="mb-2">
                 <a
                   href={`#${slugify(heading?.children[0].text)}`}
-                  className=" hover:text-[#A33DFF] ease-in-out"
+                  className=" hover:text-[#A33DFF] ease-in-out text-base sm:text-lg"
                 >
                   {heading?.children[0].text}
                 </a>
