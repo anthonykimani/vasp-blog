@@ -20,6 +20,7 @@ async function getData(slug: string) {
   "dateTime": _createdAt,
   "updatedAt": _updatedAt,
   category,
+  "headings": content[style in ["h1", "h2", "h3", "h4", "h5", "h6"]],
   link,
   "categoryTitle":category.title,
   location,
@@ -27,7 +28,6 @@ async function getData(slug: string) {
 }[0]`;
 
   const data = await client.fetch(query);
-  console.log(query);
   return data;
 }
 
@@ -49,6 +49,7 @@ const BlogStructure = async ({ params }: { params: { slug: string } }) => {
             className="h-[500px] w-full object-cover my-[20px] rounded-md"
           />
         </article>
+        <Toc headings={event?.headings} />
         <div className="prose prose-xl min-w-full text-white prose-invert  prose-li:marker:text-primary prose-a:text-primary">
           <PortableText value={event.content} />
         </div>
@@ -58,3 +59,22 @@ const BlogStructure = async ({ params }: { params: { slug: string } }) => {
 };
 
 export default BlogStructure;
+
+const Toc = ({ headings }: any) => {
+  return (
+    <div>
+      <h2 className="text-white">Table of Contents</h2>
+      <nav>
+        <ul className="text-white">
+          {headings?.map((heading: any) => {
+            return (
+              <li key={heading?._key} className="mb-2">
+                <a href="#">{heading?._key}hello</a>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+    </div>
+  );
+};

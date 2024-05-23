@@ -109,18 +109,17 @@ export default async function FeaturedBlogPost() {
                     {post.date}
                   </time>
                   <h2 className="mt-2 text-xl font-bold text-[#A33DFF]">
-                    <a>
+                    <span>
                       <span className="absolute inset-0" />
                       {post.title}
-                    </a>
+                    </span>
                   </h2>
                   <p className="mt-4 text-sm leading-6 text-gray-600">
                     {post.description}
                   </p>
                 </div>
                 <div className="mt-4 flex">
-                  <a
-                    href={post.authorName}
+                  <span
                     className="relative flex gap-x-2.5 text-sm font-semibold leading-6 text-white"
                   >
                     <Image
@@ -131,7 +130,7 @@ export default async function FeaturedBlogPost() {
                       className="h-6 w-6 flex-none rounded-full bg-gray-50 object-cover"
                     />
                     {post.authorName}
-                  </a>
+                  </span>
                 </div>
               </Link>
             ))}
