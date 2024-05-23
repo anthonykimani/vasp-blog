@@ -7,7 +7,7 @@ import Link from "next/link";
 import React from "react";
 
 async function getData() {
-  const query = `*[_type == 'event'] | order(_createdAt desc){
+  const query = `*[_type == 'blog'] | order(_createdAt desc){
     title,
       description,
       "currentSlug": slug.current,
@@ -18,22 +18,38 @@ async function getData() {
       category,
       link,
       "categoryTitle":category.title,
-      location,
-      content,
+      "authorName":author.name,
+      "authorRole":author.role,
+      "authorImageUrl": author.imageUrl.asset._ref,
   }`;
+
+  // *[_type == 'event'] | order(_createdAt desc){
+  //   title,
+  //     description,
+  //     "currentSlug": slug.current,
+  //     "imageUrl": imageUrl.asset._ref,
+  //     content,
+  //     "dateTime": _createdAt,
+  //     "updatedAt": _updatedAt,
+  //     category,
+  //     link,
+  //     "categoryTitle":category.title,
+  //     location,
+  //     content,
+  // }
 
   const data = await client.fetch(query);
   return data;
 }
 
-const Events = async () => {
+const Blogs = async () => {
   const data = await getData();
 
   return (
     <section className="bg-aqua text-black font-jakarta  p-5 md:py-10 md:px-20">
       <article className="flex flex-col items-center xsm:flex-row py-5">
         <h2 className="text-[#A33DFF] text-center font-bold text-3xl md:text-4xl lg:text-5xl">
-          Upcoming Events
+        Recent Blog Posts
         </h2>
         <h3 className="text-lg text-white text-center my-[30px]">
           Attend trainings, workshops & take courses among other exciting
@@ -43,7 +59,7 @@ const Events = async () => {
       <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 ">
         {data.map((post: Event) => (
           <Link
-            href={`/events/${post.currentSlug}`}
+            href={`/blog/${post.currentSlug}`}
             key={post.id}
             className="flex flex-col items-start justify-between bg-[#a5a5a518] rounded-2xl overflow-hidden"
           >
@@ -86,4 +102,4 @@ const Events = async () => {
   );
 };
 
-export default Events;
+export default Blogs;

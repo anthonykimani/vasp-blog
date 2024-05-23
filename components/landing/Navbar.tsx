@@ -46,7 +46,7 @@ export default function Navbar() {
                   />
                 </div>
                 <div className="hidden sm:ml-6 sm:flex justify-center w-full">
-                  <div className="flex justify-around space-x-4 w-[80%]">
+                  <div className="flex justify-around space-x-4 w-[50%]">
                     {navigation.map((item) => (
                       <Link
                         key={item.name}

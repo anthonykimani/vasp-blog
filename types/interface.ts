@@ -6,6 +6,7 @@ export interface BlogArticle {
     description: string;
     date: string;
     categoryTitle: string;
+    headings?: Array<HTMLHeadElement | string>;
     authorName: string;
     authorRole: string;
     authorImageUrl: any;
