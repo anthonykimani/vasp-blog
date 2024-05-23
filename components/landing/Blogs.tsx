@@ -1,7 +1,7 @@
 import { client, urlFor } from "@/app/lib/sanity";
 import { featureSource } from "@/helpers/featureSource";
 import { statSource } from "@/helpers/statSource";
-import { Event } from "@/types/interface";
+import { BlogArticle } from "@/types/interface";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -23,21 +23,6 @@ async function getData() {
       "authorImageUrl": author.imageUrl.asset._ref,
   }`;
 
-  // *[_type == 'event'] | order(_createdAt desc){
-  //   title,
-  //     description,
-  //     "currentSlug": slug.current,
-  //     "imageUrl": imageUrl.asset._ref,
-  //     content,
-  //     "dateTime": _createdAt,
-  //     "updatedAt": _updatedAt,
-  //     category,
-  //     link,
-  //     "categoryTitle":category.title,
-  //     location,
-  //     content,
-  // }
-
   const data = await client.fetch(query);
   return data;
 }
@@ -46,10 +31,10 @@ const Blogs = async () => {
   const data = await getData();
 
   return (
-    <section className="bg-aqua text-black font-jakarta  p-5 md:py-10 md:px-20">
+    <section className="bg-[#161625] text-black font-jakarta  p-5 md:py-10 md:px-20">
       <article className="flex flex-col items-center xsm:flex-row py-5">
         <h2 className="text-[#A33DFF] text-center font-bold text-3xl md:text-4xl lg:text-5xl">
-        Recent Blog Posts
+          Recent Blog Posts
         </h2>
         <h3 className="text-lg text-white text-center my-[30px]">
           Attend trainings, workshops & take courses among other exciting
@@ -57,11 +42,11 @@ const Blogs = async () => {
         </h3>
       </article>
       <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 ">
-        {data.map((post: Event) => (
+        {data.map((post: BlogArticle) => (
           <Link
             href={`/blog/${post.currentSlug}`}
             key={post.id}
-            className="flex flex-col items-start justify-between bg-[#a5a5a518] rounded-2xl overflow-hidden"
+            className="flex flex-col items-start justify-start bg-[#a5a5a518] rounded-2xl overflow-hidden"
           >
             <div className="relative w-full h-[300px] overflow-hidden object-contain">
               {post.imageUrl && (
@@ -74,11 +59,8 @@ const Blogs = async () => {
                 />
               )}
             </div>
-            <div className="max-w-xl p-5 flex flex-col justify-around">
-              <div className="mt-8 flex items-center text-xs">
-                <time dateTime={post.date} className="text-gray-500">
-                  {post.date}
-                </time>
+            <div className="w-full h-[1/2] p-5 flex flex-col justify-around">
+              <div className=" flex items-center text-xs">
                 <span className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
                   {post.categoryTitle}
                 </span>

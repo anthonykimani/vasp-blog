@@ -4,7 +4,7 @@ export interface BlogArticle {
     currentSlug: any; // Typically would use a more specific type tailored to what a 'slug' should represent
     imageUrl: any; // Adjust the type according to the image representation you need
     description: string;
-    date: string;
+    dateTime: string;
     categoryTitle: string;
     headings?: Array<HTMLHeadElement | string>;
     authorName: string;
@@ -13,13 +13,13 @@ export interface BlogArticle {
     content: any; // Specify a more detailed type if you know the structure of items in the array
   }
 
-  export interface Event {
+  export interface EventInterface {
     id: number;
     title: string;
     currentSlug: any; // Typically would use a more specific type tailored to what a 'slug' should represent
     imageUrl: any; // Adjust the type according to the image representation you need
     description: string;
-    date: string;
+    dateTime: string;
     headings?: Array<HTMLHeadElement | string>;
     categoryTitle: string;
     location: string;

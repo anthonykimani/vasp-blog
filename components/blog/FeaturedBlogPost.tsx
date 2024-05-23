@@ -103,10 +103,10 @@ export default async function FeaturedBlogPost() {
               >
                 <div className="group relative max-w-xl">
                   <time
-                    dateTime={post.date}
+                    dateTime={post.dateTime}
                     className="block text-sm leading-6 text-gray-600"
                   >
-                    {post.date}
+                    {post.dateTime}
                   </time>
                   <h2 className="mt-2 text-xl font-bold text-[#A33DFF]">
                     <span>

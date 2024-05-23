@@ -17,10 +17,10 @@ import { VaspLogoPlain } from "@/constants/svg";
 import Link from "next/link";
 
 const navigation = [
-  { name: "Home", href: "#", current: true },
+  { name: "Home", href: "/", current: true },
   { name: "About Us", href: "#", current: false },
-  { name: "Publications", href: "#", current: false },
-  { name: "Events", href: "#", current: false },
+  { name: "Publications", href: "/publications", current: false },
+  { name: "Events", href: "/events", current: false },
   { name: "Contact Us", href: "#", current: false },
 ];
 
