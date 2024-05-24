@@ -35,94 +35,66 @@ const Events = async () => {
     <section className="bg-[#161625] text-black font-jakarta  p-5 md:py-10 md:px-20">
       <article className="flex flex-col items-center xsm:flex-row py-5">
         <h2 className="text-[#A33DFF] text-center font-bold text-3xl md:text-4xl lg:text-5xl">
-          Upcoming Events
+          Upcoming Activities
         </h2>
         <h3 className="text-lg text-white text-center my-[30px]">
-          Attend trainings, workshops & take courses among other exciting
-          activities to build a rewarding LawTech career.
+          Join Us in a Series of trainings, workshops & short courses among other exciting
+          activities to advance adoption of Virtual Assets.
         </h3>
       </article>
-      <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 ">
+      <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
         {data.map((post: EventInterface) => {
           const parsedDate = parse(post.dateTime, "yyyy-MM-dd", new Date());
           return (
             <Link
               href={`/event/${post.currentSlug}`}
               key={post.id}
-              className="flex flex-col items-start justify-between bg-[#a5a5a518] rounded-2xl overflow-hidden w-[400px]"
+              className="flex flex-col items-start justify-between bg-[#a5a5a518] rounded-2xl overflow-hidden w-full"
             >
-              <div className="relative w-full h-full overflow-hidden object-contain">
-                {post.imageUrl && (
-                  <Image
-                    src={urlFor(post.imageUrl).url()}
-                    alt=""
-                    width={0}
-                    height={0}
-                    className="w-full h-full object-cover"
-                  />
-                )}
-              </div>
-              <div className="w-full h-full p-5 flex flex-col justify-around">
-                <div className="flex items-center justify-between text-xs">
-                  <div className="text-white flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="size-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                      />
-                    </svg>
+              <article
+                key={post.id}
+                className="w-full h-full relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
+              >
+                <Image
+                  width={0}
+                  height={0}
+                  src={urlFor(post.imageUrl).url()}
+                  alt=""
+                  className="absolute inset-0 -z-10 min-h-full min-w-full object-cover"
+                />
+                <div className="hover:hidden absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40" />
+                <div className="hover:hidden absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
 
-                    <time
-                      dateTime={parsedDate.toString()}
-                      className="text-gray-500 ml-2"
-                    >
-                      {"August 05, 2024"}
-                    </time>
-                  </div>
-                  <div className="flex items-center text-white">
+                <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
+                  <time dateTime={parsedDate.toString()} className="mr-8">
+                    {"March 4, 2024"}
+                  </time>
+                  <div className="-ml-4 flex items-center gap-x-4">
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="size-6"
+                      viewBox="0 0 2 2"
+                      className="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                      />
+                      <circle cx={1} cy={1} r={1} />
                     </svg>
-
-                    <span className="text-gray-500 ml-2">{post.location}</span>
+                    <div className="flex gap-x-2.5">
+                      <Image
+                        width={100}
+                        height={100}
+                        src={urlFor(post.imageUrl).url()}
+                        alt=""
+                        className="h-6 w-6 flex-none rounded-full bg-white/10"
+                      />
+                      {post.location}
+                    </div>
                   </div>
                 </div>
-                <div className="group relative h-full flex flex-col items-start justify-around">
-                  <h3 className="text-2xl font-semibold text-[#A33DFF] mb-3">
-                    <span>
-                      <span className="absolute inset-0" />
-                      {post.title}
-                    </span>
-                  </h3>
-                  <span className=" rounded-full text-xs my-5 bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                    {post.categoryTitle}
+                <h3 className="mt-3 text-lg font-semibold leading-6 text-white">
+                  <span>
+                    <span className="absolute inset-0" />
+                    {post.title}
                   </span>
-                </div>
-              </div>
+                </h3>
+              </article>
             </Link>
           );
         })}

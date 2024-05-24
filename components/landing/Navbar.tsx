@@ -18,9 +18,9 @@ import Link from "next/link";
 
 const navigation = [
   { name: "Home", href: "/", current: true },
-  { name: "About", href: "#", current: false },
+  { name: "Knowledge Hub", href: "#", current: false },
   { name: "Publications", href: "/publications", current: false },
-  { name: "Events", href: "/events", current: false },
+  { name: "Activities", href: "/events", current: false },
   { name: "Contact", href: "#", current: false },
 ];
 
@@ -45,7 +45,7 @@ export default function Navbar() {
                     height={100}
                   />
                 </Link>
-                <div className="hidden lg:ml-6 sm:flex justify-center w-full">
+                <div className="hidden lg:ml-6 sm:flex justify-end w-full">
                   <div className="flex justify-around">
                     {navigation.map((item) => (
                       <Link
