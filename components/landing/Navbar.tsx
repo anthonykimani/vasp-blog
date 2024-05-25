@@ -18,7 +18,7 @@ import Link from "next/link";
 
 const navigation = [
   { name: "Home", href: "/", current: true },
-  { name: "Knowledge Hub", href: "#", current: false },
+  { name: "Knowledge Hub", href: "/knowledgehub", current: false },
   { name: "Publications", href: "/publications", current: false },
   { name: "Activities", href: "/events", current: false },
   { name: "Contact", href: "#", current: false },

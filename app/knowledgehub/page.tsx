@@ -1,16 +1,16 @@
 import Footer from "@/components/landing/Footer";
-import Events from "@/components/landing/Events";
 import Navbar from "@/components/landing/Navbar";
+import Resources from "@/components/resources/Resources";
 import React from "react";
 
-const EventPage = () => {
+const KnowledgeHub = () => {
   return (
     <section>
       <Navbar />
-      <Events />
+      <Resources />
       <Footer />
     </section>
   );
 };
 
-export default EventPage;
+export default KnowledgeHub;
