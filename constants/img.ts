@@ -10,6 +10,10 @@ import Defi from "@/public/img/defi.png"
 import Policy from "@/public/img/policy.png"
 import Tax from "@/public/img/tax.png"
 import Token from "@/public/img/token.png"
+import CeloDao from "@/public/img/celo-dao.jpeg"
+import Chainanalysis from "@/public/img/chainanlysis.png"
+import KotaniPay from "@/public/img/kotanipay.jpeg"
+import Web3Club from "@/public/img/web3-clubs.jpg"
 
 
 export {
@@ -24,5 +28,9 @@ export {
     Defi,
     Policy,
     Tax,
-    Token
+    Token,
+    CeloDao,
+    Chainanalysis,
+    KotaniPay,
+    Web3Club,
 }

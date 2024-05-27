@@ -4,15 +4,17 @@ const HeroSection = () => {
   return (
     <div className="bg-app-bg bg-no-repeat bg-cover flex flex-col md:flex-row items-center justify-start p-5 md:py-10 md:px-20">
       <article className="text-black flex flex-col justify-around md:justify-center h-[500px]">
-      <h2 className="md:my-[20px] text-white text-3xl font-semibold">
+        <h2 className="md:my-[20px] text-white text-3xl font-semibold">
           We are the
         </h2>
-        <h1 className="text-white font-clashDisplay text-5xl lg:text-6xl font-semibold md:my-[20px]">
-          Virtual Assets
-        </h1>
-        <h1 className="text-white font-clashDisplay text-5xl lg:text-6xl font-semibold md:my-[20px]">
-          Chamber of Commerce
-        </h1>
+        <div>
+          <h1 className="text-white font-clashDisplay text-5xl lg:text-6xl font-semibold md:my-[20px]">
+            Virtual Assets
+          </h1>
+          <h1 className="text-white font-clashDisplay text-5xl lg:text-6xl font-semibold md:my-[20px]">
+            Chamber of Commerce
+          </h1>
+        </div>
         <h2 className="md:my-[20px] text-white">
           A Policy Think Tank to Advance Adoption of Virtual Assets
         </h2>

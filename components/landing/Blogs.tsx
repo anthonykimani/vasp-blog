@@ -72,7 +72,7 @@ const Blogs = async () => {
                     {post.title}
                   </span>
                 </h3>
-                <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+                <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-400">
                   {post.description}
                 </p>
               </div>

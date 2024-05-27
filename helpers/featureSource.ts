@@ -3,7 +3,7 @@ import { Certification, Consumer, Defi, Policy, S1, S2, S3, Tax, Token } from "@
 export const featureSource = [
   {
     icon: Certification,
-    title: "Licensing and Compliance",
+    title: "Licensing",
     subtitle:
       "Attend Trainings, workshops & take courses among other exciting activities to build a rewarding LawTech career",
   },
@@ -15,7 +15,7 @@ export const featureSource = [
   },
   {
     icon: Tax,
-    title: "Tax Policy",
+    title: "Taxation",
     subtitle:
       "Connect with industry experts and build effective, meaningful relationships throughout your LawTech Journey",
   },
@@ -33,7 +33,7 @@ export const featureSource = [
   },
   {
     icon: Defi,
-    title: "DeFi Exploration",
+    title: "DeFi & StableCoins",
     subtitle:
       "Connect with industry experts and build effective, meaningful relationships throughout your LawTech Journey",
   },

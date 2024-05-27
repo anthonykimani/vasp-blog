@@ -21,7 +21,7 @@ const Features = () => {
           return (
             <div
               key={index}
-              className="bg-[#1616258b] w-auto  p-4 flex flex-col justify-around items-center rounded shadow-xl"
+              className="bg-[#1616252f] w-auto  p-4 flex flex-col justify-around items-center rounded shadow-xl"
             >
               <Image
                 src={element.icon}
