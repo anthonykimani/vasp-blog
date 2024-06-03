@@ -5,36 +5,36 @@ export const featureSource = [
     icon: Certification,
     title: "Licensing",
     subtitle:
-      "Attend Trainings, workshops & take courses among other exciting activities to build a rewarding LawTech career",
+      "Understand the legal frameworks and requirements for licensing digital assets.",
   },
   {
     icon: Policy,
     title: "AML & CTF Policy",
     subtitle:
-      "Advance your Expertise and learn job-ready skills that are in high-demand and get job opportunities, Internships, Fellowships etc",
+      "Gain in-depth knowledge of Anti-Money Laundering and Counter-Terrorism Financing strategies.",
   },
   {
     icon: Tax,
-    title: "Taxation",
+    title: "Digital Assets Tax*",
     subtitle:
-      "Connect with industry experts and build effective, meaningful relationships throughout your LawTech Journey",
+      "Master the complexities of tax regulations in the digital asset space",
   },
   {
     icon: Consumer,
     title: "Consumer Protection",
     subtitle:
-      "Attend Trainings, workshops & take courses among other exciting activities to build a rewarding LawTech career",
+      "Learn to navigate and enforce consumer protection laws in virtual asset transactions.",
   },
   {
     icon: Token,
     title: "RWA Tokenization",
     subtitle:
-      "Advance your Expertise and learn job-ready skills that are in high-demand and get job opportunities, Internships, Fellowships etc",
+      "Explore the tokenization of Real-World Assets and its transformative potential.",
   },
   {
     icon: Defi,
     title: "DeFi & StableCoins",
     subtitle:
-      "Connect with industry experts and build effective, meaningful relationships throughout your LawTech Journey",
+      "Explore the world of Stablecoins and its transformative potential.",
   },
 ];

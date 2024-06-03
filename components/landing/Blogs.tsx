@@ -36,10 +36,6 @@ const Blogs = async () => {
         <h2 className="text-[#A33DFF] text-center font-bold text-3xl md:text-4xl lg:text-5xl">
           Recent Blog Posts
         </h2>
-        <h3 className="text-lg text-white text-center my-[30px]">
-          Attend trainings, workshops & take courses among other exciting
-          activities to build a rewarding LawTech career.
-        </h3>
       </article>
       <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 ">
         {data.map((post: BlogArticle) => (

@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment } from "react";
+import { Fragment, useRef } from "react";
 import {
   Disclosure,
   DisclosureButton,
@@ -21,7 +21,6 @@ const navigation = [
   { name: "Knowledge Hub", href: "/knowledgehub", current: false },
   { name: "Publications", href: "/publications", current: false },
   { name: "Activities", href: "/events", current: false },
-  { name: "Contact", href: "#", current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -29,6 +28,9 @@ function classNames(...classes: string[]) {
 }
 
 export default function Navbar() {
+
+  const scrollRef = useRef<HTMLDivElement | null>();
+
   return (
     <Disclosure as="nav" className="bg-[#161625]">
       {({ open }) => (

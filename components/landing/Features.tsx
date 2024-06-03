@@ -11,9 +11,7 @@ const Features = () => {
           Focus Areas
         </h2>
         <h3 className="text-lg text-white text-center my-[30px]">
-          Join a community of young LawTech enthusiasts and match your goals to
-          our programs, explore your options and map out your path to a
-          successful Lawtech career.
+        We specialize in the intricacies of virtual asset laws and policies, empowering businesses and governments to confidently navigate the complex landscape of cryptocurrency regulations. Let us guide you through the uncharted territories of crypto compliance, ensuring your success and security in the digital economy.
         </h3>
       </article>
       <article className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">

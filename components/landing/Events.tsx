@@ -7,6 +7,7 @@ import Link from "next/link";
 import React from "react";
 import { parse } from "date-fns";
 import { Clock, MapPin } from "@phosphor-icons/react";
+import { format } from 'date-fns';
 
 async function getData() {
   const query = `*[_type == 'event'] | order(_createdAt desc){
@@ -44,7 +45,6 @@ const Events = async () => {
       </article>
       <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
         {data.map((post: EventInterface) => {
-          const parsedDate = parse(post.dateTime, "yyyy-MM-dd", new Date());
           return (
             <Link
               href={`/event/${post.currentSlug}`}
@@ -66,8 +66,8 @@ const Events = async () => {
                 <div className="hover:hidden absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
 
                 <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
-                  <time dateTime={parsedDate.toString()} className="mr-8">
-                    {"March 4, 2024"}
+                  <time className="mr-8">
+                    {format(new Date(post.dateTime), "PPpp")}
                   </time>
                   <div className="-ml-4 flex items-center gap-x-4">
                     <svg
@@ -98,6 +98,7 @@ const Events = async () => {
             </Link>
           );
         })}
+        {/* <button>view more</button> */}
       </div>
     </section>
   );
