@@ -40,7 +40,7 @@ export default function Navbar() {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <Link href="/" className="flex flex-shrink-0 items-center">
                   <Image
-                    className="h-8 w-auto"
+                    className=""
                     src={VaspLogoPlain}
                     alt="Your Company"
                     width={100}
@@ -48,7 +48,7 @@ export default function Navbar() {
                   />
                 </Link>
                 <div className="hidden lg:ml-6 sm:flex justify-end w-full">
-                  <div className="flex justify-around">
+                  <div className="flex justify-around items-center">
                     {navigation.map((item) => (
                       <Link
                         key={item.name}
