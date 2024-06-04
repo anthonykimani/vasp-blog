@@ -5,11 +5,10 @@ import { EventInterface } from "@/types/interface";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { parse } from "date-fns";
-import { Clock, MapPin } from "@phosphor-icons/react";
-import { format } from 'date-fns';
+import { format } from "date-fns";
 
 async function getData() {
+  const revalidate = 30
   const query = `*[_type == 'event'] | order(_createdAt desc){
     title,
       description,
@@ -25,7 +24,7 @@ async function getData() {
       content,
   }`;
 
-  const data = await client.fetch(query);
+  const data = await client.fetch(query, {next: {revalidate}});
   return data;
 }
 
@@ -39,62 +38,52 @@ const Events = async () => {
           Upcoming Activities
         </h2>
         <h3 className="text-lg text-white text-center my-[30px]">
-          Join Us in a Series of trainings, workshops & short courses among other exciting
-          activities to advance adoption of Virtual Assets.
+          Join Us in a Series of trainings, workshops & short courses among
+          other exciting activities to advance adoption of Virtual Assets.
         </h3>
       </article>
       <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
         {data.map((post: EventInterface) => {
           return (
             <Link
-              href={`/event/${post.currentSlug}`}
+              href={`${post.link}`}
               key={post.id}
-              className="flex flex-col items-start justify-between bg-[#a5a5a518] rounded-2xl overflow-hidden w-full"
+              className="flex flex-col items-start justify-between"
             >
-              <article
-                key={post.id}
-                className="w-full h-full relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
-              >
+              <div className="relative w-full">
                 <Image
                   width={0}
                   height={0}
                   src={urlFor(post.imageUrl).url()}
                   alt=""
-                  className="absolute inset-0 -z-10 min-h-full min-w-full object-cover"
+                  className="aspect-[2/2] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/2] lg:aspect-[2/2]"
                 />
-                <div className="hover:hidden absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40" />
-                <div className="hover:hidden absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
-
-                <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
-                  <time className="mr-8">
+                <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+              </div>
+              <div className="max-w-xl">
+                <div className="mt-8 flex justify-between items-center gap-x-4 text-xs">
+                  <time dateTime={post.dateTime} className="text-gray-500">
                     {format(new Date(post.dateTime), "PPpp")}
                   </time>
-                  <div className="-ml-4 flex items-center gap-x-4">
-                    <svg
-                      viewBox="0 0 2 2"
-                      className="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50"
-                    >
-                      <circle cx={1} cy={1} r={1} />
-                    </svg>
-                    <div className="flex gap-x-2.5">
-                      <Image
-                        width={100}
-                        height={100}
-                        src={urlFor(post.imageUrl).url()}
-                        alt=""
-                        className="h-6 w-6 flex-none rounded-full bg-white/10"
-                      />
-                      {post.location}
-                    </div>
-                  </div>
-                </div>
-                <h3 className="mt-3 text-lg font-semibold leading-6 text-white">
-                  <span>
-                    <span className="absolute inset-0" />
-                    {post.title}
+                  <span
+                    href={post.categoryTitle}
+                    className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+                  >
+                    {post.categoryTitle}
                   </span>
-                </h3>
-              </article>
+                </div>
+                <div className="group relative">
+                  <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-100">
+                    <span>
+                      <span className="absolute inset-0" />
+                      {post.title}
+                    </span>
+                  </h3>
+                  <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-400">
+                    {post.description}
+                  </p>
+                </div>
+              </div>
             </Link>
           );
         })}

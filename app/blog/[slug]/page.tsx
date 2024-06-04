@@ -92,7 +92,7 @@ async function getData(slug: string) {
       "authorImageUrl": author.imageUrl.asset._ref,
 }[0]`;
 
-  const data = await client.fetch(query);
+  const data = await client.fetch(query, {next: {revalidate}});
   return data;
 }
 

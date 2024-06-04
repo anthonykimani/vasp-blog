@@ -25,15 +25,17 @@ async function getData(slug: string) {
   content,
 }[0]`;
 
-  const data = await client.fetch(query);
+  const data = await client.fetch(query, {next: {revalidate}});
   return data;
 }
 
 const Event = async ({ params }: { params: { slug: string } }) => {
   const event: EventInterface = await getData(params.slug);
 
+  console.log(event)
+
   return (
-    event.content && (
+    event.currentSlug && (
       <>
         <Navbar />
         <section className="bg-[#161625] font-jakarta md:py-10 sm:px-[30px] xl:px-[100px]">

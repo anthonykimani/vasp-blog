@@ -25,6 +25,7 @@ const posts = [
 ];
 
 async function getData() {
+  const revalidate = 30
   const query = `*[_type == 'research'] | order(_createdAt desc){
     title,
       description,
@@ -39,7 +40,7 @@ async function getData() {
       researchedEntity,
   }`;
 
-  const data = await client.fetch(query);
+  const data = await client.fetch(query, {next: {revalidate}});
   return data;
 }
 

@@ -44,7 +44,7 @@ export default {
       {
         name: 'link',
         type: 'url',
-        title: 'Blog Link',
+        title: 'Event Link',
       },
       {
         name: 'category',
@@ -60,16 +60,6 @@ export default {
             name: 'href',
             type: 'string',
             title: 'Href',
-          },
-        ],
-      },
-      {
-        name: 'content',
-        type: 'array',
-        title: 'content',
-        of: [
-          {
-            type: 'block',
           },
         ],
       },

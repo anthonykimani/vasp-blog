@@ -23,6 +23,7 @@ export interface BlogArticle {
     headings?: Array<HTMLHeadElement | string>;
     categoryTitle: string;
     location: string;
+    link:string;
     content: any; // Specify a more detailed type if you know the structure of items in the array
   }
 

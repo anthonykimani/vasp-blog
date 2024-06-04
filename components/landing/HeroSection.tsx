@@ -2,7 +2,7 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <div className="bg-app-bg bg-no-repeat bg-cover flex flex-col md:flex-row items-center justify-start p-5 md:py-10 ">
+    <div className="bg-app-bg bg-no-repeat bg-cover flex flex-col md:flex-row items-center justify-start p-5 md:py-10 md:px-20">
       <article className="text-black flex flex-col justify-center md:justify-center h-[500px]">
         <h2 className=" text-white text-3xl font-semibold">
           We are the
@@ -15,7 +15,7 @@ const HeroSection = () => {
             Chamber of Commerce
           </h1>
         </div>
-        <h2 className="md:mb-[30px] text-white">
+        <h2 className="mb-[20px] md:my-[30px] text-white">
           A Policy Think Tank to Advance Adoption of Virtual Assets
         </h2>
         <button className=" py-3 px-6 w-[150px] rounded-full bg-[#A33DFF] text-white font-semibold hover:bg-white hover:text-black hover:border-aqua hover:cursor-pointer">

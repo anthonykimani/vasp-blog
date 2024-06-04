@@ -7,6 +7,7 @@ import Link from "next/link";
 import React from "react";
 
 async function getData() {
+  const revalidate = 30
   const query = `*[_type == 'blog'] | order(_createdAt desc){
     title,
       description,
@@ -23,7 +24,7 @@ async function getData() {
       "authorImageUrl": author.imageUrl.asset._ref,
   }`;
 
-  const data = await client.fetch(query);
+  const data = await client.fetch(query, {next: {revalidate}});
   return data;
 }
 
