@@ -6,9 +6,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { format } from "date-fns";
+export const revalidate = 30;
 
 async function getData() {
-  const revalidate = 30
   const query = `*[_type == 'event'] | order(_createdAt desc){
     title,
       description,
@@ -24,7 +24,7 @@ async function getData() {
       content,
   }`;
 
-  const data = await client.fetch(query, {next: {revalidate}});
+  const data = await client.fetch(query);
   return data;
 }
 
@@ -66,7 +66,6 @@ const Events = async () => {
                     {format(new Date(post.dateTime), "PPpp")}
                   </time>
                   <span
-                    href={post.categoryTitle}
                     className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
                   >
                     {post.categoryTitle}

@@ -1,9 +1,9 @@
 import { client, urlFor } from "@/app/lib/sanity";
 import { BlogArticle } from "@/types/interface";
 import Image from "next/image";
+export const revalidate = 30;
 
 async function getData() {
-  const revalidate = 30
   const query = `*[_type == 'blog'] | order(_createdAt desc){
     title,
       description,
@@ -19,11 +19,9 @@ async function getData() {
       "authorImageUrl": author.imageUrl.asset._ref,
   }`;
 
-  const data = await client.fetch(query, {next: {revalidate}});
+  const data = await client.fetch(query);
   return data;
 }
-
-
 
 export default async function ThreeColumnBlog() {
   const data = await getData();
@@ -59,9 +57,7 @@ export default async function ThreeColumnBlog() {
                   <time dateTime={post.dateTime} className="text-gray-500">
                     {post.dateTime}
                   </time>
-                  <a
-                    className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
-                  >
+                  <a className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
                     {post.categoryTitle}
                   </a>
                 </div>

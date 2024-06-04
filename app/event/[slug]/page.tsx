@@ -25,14 +25,14 @@ async function getData(slug: string) {
   content,
 }[0]`;
 
-  const data = await client.fetch(query, {next: {revalidate}});
+  const data = await client.fetch(query);
   return data;
 }
 
 const Event = async ({ params }: { params: { slug: string } }) => {
   const event: EventInterface = await getData(params.slug);
 
-  console.log(event)
+  console.log(event);
 
   return (
     event.currentSlug && (
