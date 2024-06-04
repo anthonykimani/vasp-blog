@@ -1,6 +1,4 @@
 import { client, urlFor } from "@/app/lib/sanity";
-import { featureSource } from "@/helpers/featureSource";
-import { statSource } from "@/helpers/statSource";
 import { EventInterface } from "@/types/interface";
 import Image from "next/image";
 import Link from "next/link";
@@ -24,7 +22,7 @@ async function getData() {
       content,
   }`;
 
-  const data = await client.fetch(query);
+  const data = await client.fetch(query, {}, { cache: "no-store" });
   return data;
 }
 

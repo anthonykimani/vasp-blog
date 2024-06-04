@@ -24,7 +24,7 @@ async function getData() {
       "authorImageUrl": author.imageUrl.asset._ref,
   }`;
 
-  const data = await client.fetch(query);
+  const data = await client.fetch(query, {}, { cache: "no-store" });
   return data;
 }
 
