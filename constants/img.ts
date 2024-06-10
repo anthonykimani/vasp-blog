@@ -14,6 +14,8 @@ import CeloDao from "@/public/img/celo-dao.jpeg"
 import Chainanalysis from "@/public/img/chainanlysis.png"
 import KotaniPay from "@/public/img/kotanipay.jpeg"
 import Web3Club from "@/public/img/web3-clubs.jpg"
+import SheriaOnline from "@/public/img/sheria-online.jpeg"
+import TmmPartners from "@/public/img/tmm-partners.png"
 
 
 export {
@@ -33,4 +35,6 @@ export {
     Chainanalysis,
     KotaniPay,
     Web3Club,
+    SheriaOnline,
+    TmmPartners
 }
