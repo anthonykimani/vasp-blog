@@ -61,22 +61,20 @@ const Events = async () => {
               </div>
               <div className="max-w-xl">
                 <div className="mt-8 flex justify-between items-center gap-x-4 text-xs">
-                  <time dateTime={post.date} className="text-gray-500">
-                    {format(new Date(post.date), "PPpp")}
-                  </time>
-                  <span
-                    className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
-                  >
-                    {post.categoryTitle}
-                  </span>
-                </div>
-                <div className="group relative">
-                  <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-100">
+                  <h3 className="text-lg font-semibold leading-6 text-gray-100">
                     <span>
                       <span className="absolute inset-0" />
                       {post.title}
                     </span>
                   </h3>
+                  <span className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 text-center">
+                    {post.categoryTitle}
+                  </span>
+                </div>
+                <div className="group relative mt-3 ">
+                  <time dateTime={post.date} className="text-gray-500 ">
+                    {format(new Date(post.date), "PPpp")}
+                  </time>
                   <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-400">
                     {post.description}
                   </p>
