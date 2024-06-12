@@ -16,6 +16,7 @@ async function getData() {
       content,
       "dateTime": _createdAt,
       "updatedAt": _updatedAt,
+      date,
       category,
       link,
       "categoryTitle":category.title,

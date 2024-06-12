@@ -15,6 +15,7 @@ async function getData() {
       content,
       "dateTime": _createdAt,
       "updatedAt": _updatedAt,
+      date,
       category,
       link,
       "categoryTitle":category.title,
@@ -60,8 +61,8 @@ const Events = async () => {
               </div>
               <div className="max-w-xl">
                 <div className="mt-8 flex justify-between items-center gap-x-4 text-xs">
-                  <time dateTime={post.dateTime} className="text-gray-500">
-                    {format(new Date(post.dateTime), "PPpp")}
+                  <time dateTime={post.date} className="text-gray-500">
+                    {format(new Date(post.date), "PPpp")}
                   </time>
                   <span
                     className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"

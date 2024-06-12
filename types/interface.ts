@@ -20,6 +20,7 @@ export interface BlogArticle {
     imageUrl: any; // Adjust the type according to the image representation you need
     description: string;
     dateTime: string;
+    date: string;
     headings?: Array<HTMLHeadElement | string>;
     categoryTitle: string;
     location: string;
