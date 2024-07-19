@@ -69,16 +69,16 @@ export default async function FeaturedBlogPost() {
           </p>
           <div className="mt-4 flex flex-col justify-between gap-6 sm:mt-8 sm:flex-row-reverse sm:gap-8 lg:mt-4 lg:flex-col">
             <div className="flex">
-              <a
+              <Link
                 href={featuredPost.href}
                 className="text-sm font-semibold leading-6 text-[#A33DFF]"
                 aria-describedby="featured-post"
               >
                 Continue reading <span aria-hidden="true">&rarr;</span>
-              </a>
+              </Link>
             </div>
             <div className="flex lg:border-t lg:border-gray-900/10 lg:pt-8">
-              <a
+              <Link
                 href={featuredPost.author.href}
                 className="flex gap-x-2.5 text-sm font-semibold leading-6 text-white"
               >
@@ -90,7 +90,7 @@ export default async function FeaturedBlogPost() {
                   className="h-6 w-6 flex-none rounded-full text-white bg-gray-50"
                 />
                 {featuredPost.author.name}
-              </a>
+              </Link>
             </div>
           </div>
         </article>

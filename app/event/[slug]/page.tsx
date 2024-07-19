@@ -4,6 +4,7 @@ import { EventInterface } from "@/types/interface";
 import { slugify } from "@/utils/helpers";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export const revalidate = 30;
@@ -77,12 +78,12 @@ const Toc = ({ headings }: any) => {
           {headings?.map((heading: any) => {
             return (
               <li key={`#${heading?._key}`} className="mb-2">
-                <a
+                <Link
                   href={`#${slugify(heading?.children[0].text)}`}
                   className=" hover:text-[#A33DFF] ease-in-out"
                 >
                   {heading?.children[0].text}
-                </a>
+                </Link>
               </li>
             );
           })}

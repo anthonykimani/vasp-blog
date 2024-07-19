@@ -8,6 +8,7 @@ import { PortableText } from "next-sanity";
 import Image from "next/image";
 import React from "react";
 import Navbar from "@/components/landing/Navbar";
+import Link from "next/link";
 
 export const revalidate = 30;
 
@@ -143,12 +144,12 @@ const Toc = ({ headings }: any) => {
           {headings?.map((heading: any) => {
             return (
               <li key={`#${heading?._key}`} className="mb-2">
-                <a
+                <Link
                   href={`#${slugify(heading?.children[0].text)}`}
                   className=" hover:text-[#A33DFF] ease-in-out text-base sm:text-lg"
                 >
                   {heading?.children[0].text}
-                </a>
+                </Link>
               </li>
             );
           })}
@@ -156,14 +157,14 @@ const Toc = ({ headings }: any) => {
       </nav>
       <div className="flex justify-center space-x-3 xl:space-x-6 md:order-2 my-10">
         {social.map((item) => (
-          <a
+          <Link
             key={item.name}
             href={item.href}
             className="text-gray-500 hover:text-gray-400 border border-gray-400 p-3 rounded-full"
           >
             <span className="sr-only">{item.name}</span>
             <item.icon className="h-4 w-4 xl:h-8 xl:w-8" aria-hidden="true" />
-          </a>
+          </Link>
         ))}
       </div>
     </div>

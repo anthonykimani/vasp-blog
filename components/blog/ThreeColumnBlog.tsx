@@ -1,6 +1,7 @@
 import { client, urlFor } from "@/app/lib/sanity";
 import { BlogArticle } from "@/types/interface";
 import Image from "next/image";
+import Link from "next/link";
 export const revalidate = 30;
 
 async function getData() {
@@ -57,16 +58,14 @@ export default async function ThreeColumnBlog() {
                   <time dateTime={post.dateTime} className="text-gray-500">
                     {post.dateTime}
                   </time>
-                  <a className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                  <h4 className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
                     {post.categoryTitle}
-                  </a>
+                  </h4>
                 </div>
                 <div className="group relative">
                   <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                    <a>
                       <span className="absolute inset-0" />
                       {post.title}
-                    </a>
                   </h3>
                   <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
                     {post.description}
@@ -82,10 +81,8 @@ export default async function ThreeColumnBlog() {
                   />
                   <div className="text-sm leading-6">
                     <p className="font-semibold text-gray-900">
-                      <a>
                         <span className="absolute inset-0" />
                         {post.authorName}
-                      </a>
                     </p>
                     <p className="text-gray-600">{post.authorRole}</p>
                   </div>
