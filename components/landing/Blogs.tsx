@@ -66,7 +66,6 @@ const Blogs = async () => {
               <div className="group relative">
                 <h3 className="mt-3 text-2xl font-semibold text-[#A33DFF]">
                   <span>
-                    <span className="absolute inset-0" />
                     {post.title}
                   </span>
                 </h3>

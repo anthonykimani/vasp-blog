@@ -63,7 +63,6 @@ const Events = async () => {
                 <div className="mt-8 flex justify-between items-center gap-x-4 text-xs">
                   <h3 className="text-lg font-semibold leading-6 text-gray-100">
                     <span>
-                      <span className="absolute inset-0" />
                       {post.title}
                     </span>
                   </h3>

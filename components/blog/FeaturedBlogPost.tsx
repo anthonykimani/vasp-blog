@@ -111,7 +111,6 @@ export default async function FeaturedBlogPost() {
                   </time>
                   <h2 className="mt-2 text-xl font-bold text-[#A33DFF]">
                     <span>
-                      <span className="absolute inset-0" />
                       {post.title}
                     </span>
                   </h2>

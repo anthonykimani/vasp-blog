@@ -75,7 +75,6 @@ export default async function Resources() {
               <div className="group relative">
                 <h3 className="mt-3 text-lg font-semibold leading-6 text-white group-hover:text-white">
                   <span>
-                    <span className="absolute inset-0" />
                     {post.title}
                   </span>
                 </h3>
@@ -94,7 +93,6 @@ export default async function Resources() {
                 <div className="text-sm leading-6">
                   <p className="font-semibold text-white">
                     <span>
-                      <span className="absolute inset-0" />
                       {post.researchedEntity}
                     </span>
                   </p>
