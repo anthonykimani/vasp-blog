@@ -1,7 +1,6 @@
 import { JSX, SVGProps } from "react";
 
 import { client, urlFor } from "@/app/lib/sanity";
-import FeaturedBlogPost from "@/components/blog/FeaturedBlogPost";
 import { BlogArticle } from "@/types/interface";
 import { slugify } from "@/utils/helpers";
 import { PortableText } from "next-sanity";
@@ -126,7 +125,6 @@ const BlogStructure = async ({ params }: { params: { slug: string } }) => {
             </div>
             <Toc headings={blog?.headings} />
           </div>
-          <FeaturedBlogPost />
         </section>
       </>
     )
